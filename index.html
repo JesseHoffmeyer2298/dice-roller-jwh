@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--Author: Jesse Hoffmeyer
+This program rolls 5, 6 sided die for a game of yatzee --> 
+<html>
+<head>
+<style> 
+h1 {text-align: Left;}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+div.dice {
+  align-items: center }
+  
+</style>
+<h1>Dice Roller</h1> 
+</head>
+<!-- Random assigns a valye (1-6) to each die and adds the total--> 
+<script> 
+function diceRoll(){
+	var result = document.getElementById("result"); 
+	var die1 = document.getElementById("die1"); 
+	var die2 = document.getElementById("die2"); 
+	var die3 = document.getElementById("die3"); 
+	var die4 = document.getElementById("die4"); 
+	var die5 = document.getElementById("die5"); 
+	var roll1= Math.floor(Math.random() * 6) + 1;
+	var roll2= Math.floor(Math.random() * 6) + 1;
+	var roll3= Math.floor(Math.random() * 6) + 1;
+	var roll4= Math.floor(Math.random() * 6) + 1;
+	var roll5= Math.floor(Math.random() * 6) + 1;
+	die1.innerHTML = roll1; 
+	die2.innerHTML = roll2; 
+	die3.innerHTML = roll3; 
+	die4.innerHTML = roll4; 
+	die5.innerHTML = roll5; 
+	var total = roll1 + roll2 + roll3 + roll4 + roll5; 
+	result.innerHTML = "Total:"+total+""; 
+	
+}
+</script> 
+<body>
+<!-- Die elements initally set at 0 --> 
+<div id="die1" class="dice">0</div>
+<br>
+<div id="die2" class="dice">0</div>
+<br>
+<div id="die3" class="dice">0</div>
+<br>
+<div id="die4" class="dice">0</div>
+<br> 
+<div id="die5" class="dice">0</div>
+<br> 
+<button type="button" autofocus onclick="diceRoll()">Roll</button>
+<h3 id="result"></h3>  
+</body>
+</html>
